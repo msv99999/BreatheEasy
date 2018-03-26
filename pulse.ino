@@ -43,10 +43,11 @@ void onBeatDetected()
 String t;
 void setup()
 {
+    t=getTime();
     Serial.begin(115200);
     //SCL=D1,SDA=D2
     Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
-    t=getTime();
+    Firebase.pushInt("ard01/"+t+"/pulse/spo2total",0);
     Serial.print("Initializing pulse oximeter..");
 
     // Initialize the PulseOximeter instance
