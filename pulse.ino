@@ -41,8 +41,10 @@ void onBeatDetected()
     Serial.println("Beat!");
 }
 String t;
+int c;
 void setup()
 {
+  c=0;
     t=getTime();
     Serial.begin(115200);
     //SCL=D1,SDA=D2
@@ -91,7 +93,7 @@ void loop()
           Serial.println(Firebase.error());
         }
 
-        Firebase.pushFloat("ard01/"+t+"/spo2",spo2);
+        Firebase.setFloat("ard01/"+t+"/spo2/"+c,spo2);
         if(Firebase.failed())
         {
           Serial.println("Error");
