@@ -94,6 +94,7 @@ void loop()
         }
 
         Firebase.setFloat("ard01/"+t+"/spo2/"+c,spo2);
+        c++;
         if(Firebase.failed())
         {
           Serial.println("Error");
