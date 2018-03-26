@@ -44,12 +44,15 @@ String t;
 int c;
 void setup()
 {
-  c=0;
+    c=0;
     t=getTime();
     Serial.begin(115200);
     //SCL=D1,SDA=D2
     Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
     Firebase.setInt("ard01/"+t+"/spo2total",0);
+    Firebase.setInt("ard01/"+t+"/conti",0);
+    Firebase.setInt("ard01/"+t+"/events",0);
+    Firebase.setInt("ard01/"+t+"/average",0);
     Serial.print("Initializing pulse oximeter..");
 
     // Initialize the PulseOximeter instance
