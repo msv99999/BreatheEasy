@@ -10,7 +10,7 @@ String t;
 void setup() {
   Serial.begin(115200);
   initWifi();
-  t=getTime();
+  t="0";
   pinMode(A0,INPUT);
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
   
