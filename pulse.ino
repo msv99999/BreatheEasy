@@ -45,7 +45,7 @@ int c;
 void setup()
 {
     c=0;
-    t=getTime();
+    t="0";
     Serial.begin(115200);
     //SCL=D1,SDA=D2
     Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
